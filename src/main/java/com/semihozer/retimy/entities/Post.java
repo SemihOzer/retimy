@@ -11,6 +11,7 @@ public class Post {
     @Id
     private String id;
     private User user;
+    private List<Comment> comments;
     private List<User> likes;
     private String title;
     private String text;
@@ -20,12 +21,29 @@ public class Post {
     public Post() {
     }
 
-    public Post(User user, List<User> likes, String title, String text,Photo photo) {
+    public Post(User user, List<User> likes, String title, String text,Photo photo,List<Comment> comments) {
         this.user = user;
         this.likes = likes;
         this.title = title;
         this.text = text;
         this.timestamp = new Timestamp(System.currentTimeMillis());
+        this.photo = photo;
+        this.comments = comments;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
+    public Photo getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(Photo photo) {
         this.photo = photo;
     }
 

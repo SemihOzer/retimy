@@ -16,6 +16,4 @@ public class RetimyApplication {
 		SpringApplication.run(RetimyApplication.class, args);
 	}
 
-
-
 }

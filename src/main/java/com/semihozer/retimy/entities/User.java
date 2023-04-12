@@ -14,7 +14,7 @@ public class User {
     private String id;
     private String first_name;
     private String last_name;
-    private String user_name;
+    private String userName;
     private String email;
     private String password;
     private Date birth_date;
@@ -29,10 +29,10 @@ public class User {
     public User() {
     }
 
-    public User(String first_name, String last_name, String user_name, String email, String password, Date birth_date, List<Post> posts, List<Post> liked_posts, List<Comment> comments, List<User> followers, List<User> followings, List<User> known_users) {
+    public User(String first_name, String last_name, String userName, String email, String password, Date birth_date, List<Post> posts, List<Post> liked_posts, List<Comment> comments, List<User> followers, List<User> followings, List<User> known_users) {
         this.first_name = first_name;
         this.last_name = last_name;
-        this.user_name = user_name;
+        this.userName = userName;
         this.email = email;
         this.password = password;
         this.birth_date = birth_date;
@@ -69,12 +69,12 @@ public class User {
         this.last_name = last_name;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getUseName() {
+        return userName;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getEmail() {
