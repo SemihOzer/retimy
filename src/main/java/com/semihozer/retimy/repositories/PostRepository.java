@@ -1,4 +1,4 @@
-package com.semihozer.retimy.repsitories;
+package com.semihozer.retimy.repositories;
 
 import com.semihozer.retimy.entities.Post;
 import org.springframework.data.mongodb.repository.MongoRepository;

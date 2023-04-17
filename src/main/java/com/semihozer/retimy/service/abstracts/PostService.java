@@ -1,14 +1,16 @@
 package com.semihozer.retimy.service.abstracts;
 
-import com.semihozer.retimy.entities.Post;
 import com.semihozer.retimy.entities.User;
+import com.semihozer.retimy.service.requests.post.CreatePostRequest;
+import com.semihozer.retimy.service.responses.post.GetPostByIdResponse;
+import com.semihozer.retimy.service.responses.post.GetPostByUserResponse;
 
 import java.util.List;
 
 public interface PostService {
-    List<Post> getPostsByUser(User user);
-    Post getPostById(String id);
-    void createPost(Post post);
+    List<GetPostByUserResponse> getPostsByUser(User user);
+    GetPostByIdResponse getPostById(String id);
+    void createPost(CreatePostRequest createPostRequest);
     void deletePostById(String id);
 
 }

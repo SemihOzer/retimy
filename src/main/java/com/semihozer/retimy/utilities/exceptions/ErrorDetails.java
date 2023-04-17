@@ -1,4 +1,4 @@
-package com.semihozer.retimy.exceptions;
+package com.semihozer.retimy.utilities.exceptions;
 
 
 import java.time.LocalDateTime;

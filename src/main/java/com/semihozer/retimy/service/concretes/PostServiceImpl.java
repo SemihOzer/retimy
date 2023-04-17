@@ -2,9 +2,13 @@ package com.semihozer.retimy.service.concretes;
 
 import com.semihozer.retimy.entities.Post;
 import com.semihozer.retimy.entities.User;
-import com.semihozer.retimy.exceptions.PostNotFoundException;
-import com.semihozer.retimy.repsitories.PostRepository;
+import com.semihozer.retimy.service.requests.post.CreatePostRequest;
+import com.semihozer.retimy.service.responses.post.GetPostByIdResponse;
+import com.semihozer.retimy.service.responses.post.GetPostByUserResponse;
+import com.semihozer.retimy.utilities.exceptions.PostNotFoundException;
+import com.semihozer.retimy.repositories.PostRepository;
 import com.semihozer.retimy.service.abstracts.PostService;
+import com.semihozer.retimy.utilities.mappers.ModelMapperService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,29 +18,34 @@ import java.util.Optional;
 public class PostServiceImpl implements PostService {
 
     PostRepository postRepository;
+    ModelMapperService modelMapperService;
 
-    public PostServiceImpl(PostRepository postRepository) {
+    public PostServiceImpl(PostRepository postRepository, ModelMapperService modelMapperService) {
         this.postRepository = postRepository;
+        this.modelMapperService = modelMapperService;
     }
 
     @Override
-    public List<Post> getPostsByUser(User user) {
+    public List<GetPostByUserResponse> getPostsByUser(User user) {
         return null;
     }
 
     @Override
-    public Post getPostById(String id) {
+    public GetPostByIdResponse getPostById(String id) {
         Optional<Post> post = postRepository.findById(id);
 
         if(post.isEmpty()){
             throw new PostNotFoundException("postId:"+id+" not found!");
         }
 
-        return post.get();
+        GetPostByIdResponse responseItem = this.modelMapperService.forResponse().map(post.get(),GetPostByIdResponse.class);
+
+        return responseItem;
     }
 
     @Override
-    public void createPost(Post post) {
+    public void createPost(CreatePostRequest createPostRequest) {
+        Post post = this.modelMapperService.forRequest().map(createPostRequest, Post.class);
         postRepository.save(post);
     }
 

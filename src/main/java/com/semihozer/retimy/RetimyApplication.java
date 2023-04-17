@@ -1,13 +1,10 @@
 package com.semihozer.retimy;
 
-import com.semihozer.retimy.entities.User;
-import com.semihozer.retimy.repsitories.UserRepository;
-import org.springframework.boot.CommandLineRunner;
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 import org.springframework.context.annotation.Bean;
+
 
 @SpringBootApplication
 public class RetimyApplication {
@@ -16,4 +13,8 @@ public class RetimyApplication {
 		SpringApplication.run(RetimyApplication.class, args);
 	}
 
+	@Bean
+	public ModelMapper getMapper(){
+		return new ModelMapper();
+	}
 }
