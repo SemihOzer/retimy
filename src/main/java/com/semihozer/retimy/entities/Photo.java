@@ -10,4 +10,27 @@ public class Photo {
     private String id;
     private Binary image;
 
+    public Photo(String id, Binary image) {
+        this.id = id;
+        this.image = image;
+    }
+
+    public Photo() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Binary getImage() {
+        return image;
+    }
+
+    public void setImage(Binary image) {
+        this.image = image;
+    }
 }

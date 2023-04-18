@@ -15,19 +15,19 @@ public class Post {
     private List<User> likes;
     private String title;
     private String text;
-    private Photo photo;
+    private String photo_id;
     private Timestamp timestamp;
 
     public Post() {
     }
 
-    public Post(User user, List<User> likes, String title, String text,Photo photo,List<Comment> comments) {
+    public Post(User user, List<User> likes, String title, String text,String photo_id,List<Comment> comments) {
         this.user = user;
         this.likes = likes;
         this.title = title;
         this.text = text;
         this.timestamp = new Timestamp(System.currentTimeMillis());
-        this.photo = photo;
+        this.photo_id = photo_id;
         this.comments = comments;
     }
 
@@ -39,12 +39,12 @@ public class Post {
         this.comments = comments;
     }
 
-    public Photo getPhoto() {
-        return photo;
+    public String getPhoto_id() {
+        return photo_id;
     }
 
-    public void setPhoto(Photo photo) {
-        this.photo = photo;
+    public void setPhoto_id(String photo_id) {
+        this.photo_id = photo_id;
     }
 
     public String getId() {

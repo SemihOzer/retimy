@@ -14,17 +14,17 @@ public class GetPostByIdResponse {
     private List<User> likes;
     private String title;
     private String text;
-    private Photo photo;
+    private String photo_id;
     private Timestamp timestamp;
 
-    public GetPostByIdResponse(String id, User user, List<Comment> comments, List<User> likes, String title, String text, Photo photo, Timestamp timestamp) {
+    public GetPostByIdResponse(String id, User user, List<Comment> comments, List<User> likes, String title, String text, String photo_id, Timestamp timestamp) {
         this.id = id;
         this.user = user;
         this.comments = comments;
         this.likes = likes;
         this.title = title;
         this.text = text;
-        this.photo = photo;
+        this.photo_id = photo_id;
         this.timestamp = timestamp;
     }
 
@@ -79,12 +79,12 @@ public class GetPostByIdResponse {
         this.text = text;
     }
 
-    public Photo getPhoto() {
-        return photo;
+    public String getPhoto_id() {
+        return photo_id;
     }
 
-    public void setPhoto(Photo photo) {
-        this.photo = photo;
+    public void setPhoto_id(String photo_id) {
+        this.photo_id = photo_id;
     }
 
     public Timestamp getTimestamp() {

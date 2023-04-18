@@ -46,6 +46,7 @@ public class PostServiceImpl implements PostService {
     @Override
     public void createPost(CreatePostRequest createPostRequest) {
         Post post = this.modelMapperService.forRequest().map(createPostRequest, Post.class);
+
         postRepository.save(post);
     }
 
