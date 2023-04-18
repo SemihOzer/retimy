@@ -1,5 +1,8 @@
 package com.semihozer.retimy.entities;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -12,13 +15,18 @@ public class User {
 
     @Id
     private String id;
+    @Size(min = 3,max = 15)
     private String first_name;
+    @Size(min = 3,max = 15)
     private String last_name;
+    @Size(min = 3,max = 15)
     private String userName;
     private String email;
+    @Size(min = 7,max = 25)
     private String password;
+    @Past
     private Date birth_date;
-    private Timestamp timestamp;
+    private Date timestamp;
     private List<Post> posts;
     private List<Post> liked_posts;
     private List<Comment> comments;
@@ -101,11 +109,11 @@ public class User {
         this.birth_date = birth_date;
     }
 
-    public Timestamp getTimestamp() {
+    public Date getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Timestamp timestamp) {
+    public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
     }
 

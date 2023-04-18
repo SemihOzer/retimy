@@ -27,7 +27,14 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public List<GetPostByUserResponse> getPostsByUser(User user) {
-        return null;
+
+    List<Post> posts = postRepository.findAllByUser(user);
+
+    List<GetPostByUserResponse> postResponses = posts.stream()
+            .map(post -> this.modelMapperService.forResponse().map(post,GetPostByUserResponse.class))
+            .toList();
+
+    return postResponses;
     }
 
     @Override

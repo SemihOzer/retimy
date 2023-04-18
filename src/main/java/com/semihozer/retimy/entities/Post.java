@@ -4,6 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 @Document
@@ -16,7 +17,7 @@ public class Post {
     private String title;
     private String text;
     private String photo_id;
-    private Timestamp timestamp;
+    private Date timestamp;
 
     public Post() {
     }
@@ -87,7 +88,7 @@ public class Post {
         this.text = text;
     }
 
-    public Timestamp getTimestamp() {
+    public Date getTimestamp() {
         return timestamp;
     }
 
