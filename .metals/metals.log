@@ -1,0 +1,18 @@
+2023.04.19 03:28:04 INFO  Started: Metals version 0.11.11 in workspace '/Users/semihozer/Desktop/retimy' for client Visual Studio Code 1.77.3.
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+SLF4J: Class path contains SLF4J bindings targeting slf4j-api versions 1.7.x or earlier.
+SLF4J: Ignoring binding found at [jar:file:/Users/semihozer/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/outr/scribe-slf4j_2.13/3.11.0/scribe-slf4j_2.13-3.11.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
+2023.04.19 03:28:05 INFO  time: initialize in 1.01s
+2023.04.19 03:28:14 WARN  Build server is not auto-connectable.
+2023.04.19 03:28:14 WARN  no build target for: /Users/semihozer/Desktop/retimy/src/main/java/com/semihozer/retimy/service/concretes/PostServiceImpl.java
+2023.04.19 03:28:14 WARN  no build target for: /Users/semihozer/Desktop/retimy/src/main/java/com/semihozer/retimy/service/abstracts/PostService.java
+Apr 19, 2023 3:28:14 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1
+Apr 19, 2023 4:04:24 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7
+2023.04.19 04:04:32 INFO  Shutting down server
+2023.04.19 04:04:32 INFO  shutting down Metals
+2023.04.19 04:04:32 INFO  Exiting server

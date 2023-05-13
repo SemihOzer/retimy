@@ -4,6 +4,7 @@ import com.semihozer.retimy.entities.Post;
 import com.semihozer.retimy.entities.User;
 import com.semihozer.retimy.service.abstracts.PostService;
 import com.semihozer.retimy.service.requests.post.CreatePostRequest;
+import com.semihozer.retimy.service.responses.post.GetAllPostsResponse;
 import com.semihozer.retimy.service.responses.post.GetPostByIdResponse;
 import com.semihozer.retimy.service.responses.post.GetPostByUserResponse;
 import org.springframework.web.bind.annotation.*;
@@ -26,8 +27,9 @@ public class PostController {
     }
 
     @PostMapping("/save")
-    public void savePost(@RequestBody CreatePostRequest createPostRequest){
+    public CreatePostRequest savePost(@RequestBody CreatePostRequest createPostRequest){
         postService.createPost(createPostRequest);
+        return createPostRequest;
     }
 
     @DeleteMapping("/deleteById/{id}")
@@ -38,5 +40,10 @@ public class PostController {
     @GetMapping("/getPosts")
     public List<GetPostByUserResponse> getPostsByUser(@RequestBody User user){
         return postService.getPostsByUser(user);
+    }
+
+    @GetMapping("/getAllPosts")
+    public List<GetAllPostsResponse> getAllPosts(){
+        return postService.getAllPosts();
     }
 }

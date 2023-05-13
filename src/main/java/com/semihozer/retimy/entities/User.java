@@ -22,7 +22,6 @@ public class User {
     @Size(min = 3,max = 15)
     private String userName;
     private String email;
-    @Size(min = 7,max = 25)
     private String password;
     @Past
     private Date birth_date;

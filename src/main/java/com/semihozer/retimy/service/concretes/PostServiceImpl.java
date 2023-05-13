@@ -3,6 +3,7 @@ package com.semihozer.retimy.service.concretes;
 import com.semihozer.retimy.entities.Post;
 import com.semihozer.retimy.entities.User;
 import com.semihozer.retimy.service.requests.post.CreatePostRequest;
+import com.semihozer.retimy.service.responses.post.GetAllPostsResponse;
 import com.semihozer.retimy.service.responses.post.GetPostByIdResponse;
 import com.semihozer.retimy.service.responses.post.GetPostByUserResponse;
 import com.semihozer.retimy.utilities.exceptions.PostNotFoundException;
@@ -60,5 +61,16 @@ public class PostServiceImpl implements PostService {
     @Override
     public void deletePostById(String id) {
         postRepository.deleteById(id);
+    }
+
+    @Override
+    public List<GetAllPostsResponse> getAllPosts() {
+        List<Post> posts =  postRepository.findAll();
+
+        List<GetAllPostsResponse> postResponses = posts.stream()
+                .map(post -> this.modelMapperService.forResponse().map(post,GetAllPostsResponse.class))
+                .toList();
+
+        return postResponses;
     }
 }
